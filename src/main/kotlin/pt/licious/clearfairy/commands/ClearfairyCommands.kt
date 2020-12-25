@@ -71,6 +71,13 @@ class ClearfairyCommands : CommandBase() {
 
     override fun getTabCompletions(server: MinecraftServer, sender: ICommandSender, args: Array<String>, targetPos: BlockPos?): MutableList<String> {
         val possibleArgs = mutableListOf<String>()
+        if (args.size == 1) {
+            possibleArgs.add("time")
+            if (hasPermission(sender, "clearfairy.admin.force"))
+                possibleArgs.add("forceclear")
+            if (hasPermission(sender, "clearfairy.admin.reload"))
+                possibleArgs.add("reload")
+        }
         return getListOfStringsMatchingLastWord(args, possibleArgs)
     }
 }

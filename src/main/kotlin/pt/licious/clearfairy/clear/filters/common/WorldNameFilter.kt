@@ -5,9 +5,9 @@ import pt.licious.clearfairy.Clearfairy
 import pt.licious.clearfairy.clear.filters.IFilter
 import pt.licious.clearfairy.config.ConfigManager
 
-class WorldDimFilter : IFilter {
+class WorldNameFilter : IFilter {
 
     override fun getID() = "${Clearfairy.MOD_ID}.common.world"
 
-    override fun shouldKeep(entity: Entity) = ConfigManager.config.immuneWorldDims.any { it == entity.world.provider.dimension }
+    override fun shouldKeep(entity: Entity) = ConfigManager.config.immuneWorldNames.any { it.equals(entity.world.worldInfo.worldName, ignoreCase = true) }
 }

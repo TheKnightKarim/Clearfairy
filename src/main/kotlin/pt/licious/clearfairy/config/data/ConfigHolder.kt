@@ -10,5 +10,5 @@ data class ConfigHolder(
     val messageConfig: MessageConfig = MessageConfig(),
     val minItemAge: Int = 20,
     val immuneSpecs: Set<PokemonSpec> = setOf(PokemonSpec("Mimikyu"), PokemonSpec("Pidgey")),
-    val immuneWorldDims: Set<Int> = setOf(0)
+    val immuneWorldNames: Set<String> = setOf("name")
 )

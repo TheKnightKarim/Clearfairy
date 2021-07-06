@@ -24,7 +24,7 @@ object Clearfairy {
 
     const val MOD_ID = "clearfairy"
     const val MOD_NAME = "Clearfairy"
-    const val VERSION = "1.0"
+    const val VERSION = "1.1"
     val LOG = LogManager.getLogger(MOD_NAME)
 
     @Mod.EventHandler

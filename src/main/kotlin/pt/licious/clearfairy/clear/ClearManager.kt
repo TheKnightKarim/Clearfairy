@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler
 import pt.licious.clearfairy.Clearfairy
 import pt.licious.clearfairy.clear.filters.IFilter
 import pt.licious.clearfairy.clear.filters.common.ClearSafeFilter
+import pt.licious.clearfairy.clear.filters.common.WorldDimFilter
 import pt.licious.clearfairy.clear.filters.item.ItemAgeFilter
 import pt.licious.clearfairy.clear.filters.pixelmon.*
 import pt.licious.clearfairy.config.ConfigManager
@@ -22,6 +23,7 @@ object ClearManager {
     internal fun onPostInit() {
         // Common
         registerFilter(Clearfairy.MOD_ID, ClearSafeFilter())
+        registerFilter(Clearfairy.MOD_ID, WorldDimFilter())
         // EntityPixelmon
         registerTarget(Clearfairy.MOD_ID, EntityPixelmon::class.java) { entity -> (entity as EntityPixelmon).unloadEntity() }
         registerFilter(Clearfairy.MOD_ID, BossFilter())
